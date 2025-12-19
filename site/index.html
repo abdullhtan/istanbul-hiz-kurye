@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <link rel="icon" type="image/svg+xml" href="logo.svg">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>İstanbul Hız Kurye - Hızlı ve Güvenli Teslimat</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary: #3b82f6;
+      --secondary: #3b82f6;
+      --header-footer-bg: #162447;
+      
+      
+      --box-bg: linear-gradient(to bottom right, #fffdec, #fef3c7);
+      --box-hover-bg: linear-gradient(to bottom right, #ffffff, #fffdec);
+      --box-border: rgba(250, 204, 21, 0.4);
+      
+      
+      --text-light-on-dark: #f8fafc; 
+      --text-muted-on-dark: #cbd5e1; 
+      --text-dark-on-light: #162447; 
+      --text-body-on-light: #334155; 
+
+      --radius: 16px;
+      --maxw: 1100px;
+      --whatsapp-green: #25D366;
+      --whatsapp-dark: #1ebe5d;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      color: var(--text-muted-on-dark);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.8;
+      font-size: 18px;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    .fixed-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -999;
+  
+  background-image: 
+  
+    url('arkaplan.avif'); 
+  
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  pointer-events: none;
+}
+    
+
+    .wrap {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .site-header {
+      background: var(--header-footer-bg);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      padding: 15px 0;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+      transition: padding 0.3s;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: var(--text-light-on-dark);
+    }
+
+    .logo {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #195ac4, #1626b3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      margin-right: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      padding: 8px;
+      flex-shrink: 0;
+    }
+    
+    .logo svg { fill: white; width: 100%; height: 100%; }
+    .brand-name { font-weight: 800; font-size: 1.4rem; letter-spacing: -0.5px; }
+
+    .main-nav { display: flex; gap: 24px; align-items: center; }
+    .main-nav a { text-decoration: none; color: var(--text-muted-on-dark); font-weight: 600; transition: color 0.2s; white-space: nowrap; }
+    .main-nav a:hover { color: var(--text-light-on-dark); }
+
+   
+    .btn-whatsapp {
+      background-color: var(--whatsapp-green);
+      color: #fff !important;
+      padding: 12px 24px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-flex; align-items: center; gap: 10px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);
+      border: 1px solid transparent;
+      white-space: nowrap; 
+    }
+    .btn-whatsapp:hover {
+      background-color: var(--whatsapp-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+    }
+    .wp-icon { width: 20px; height: 20px; filter: brightness(0) invert(1); }
+
+   
+    .hero {
+      padding: 80px 0 60px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      margin: 0 0 20px;
+      background: linear-gradient(to right, #162447, #162447);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      line-height: 1.1; letter-spacing: -1px;
+    }
+    
+    .hero p {
+      font-size: 1.25rem;
+      color: var(--text-muted-on-dark);
+      max-width: 700px; margin: 0 auto 30px;
+      font-weight: 500;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+    }
+
+    h2 { font-size: 2.5rem; text-align: center; margin-bottom: 40px; margin-top: 60px; color: var(--text-light-on-dark); text-shadow: 0 2px 4px rgba(0,0,0,0.8); }
+    
+    .light-box {
+      background: var(--box-bg);
+      border: 1px solid var(--box-border);
+      border-radius: var(--radius);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      color: var(--text-body-on-light);
+    }
+    
+    .light-box h3, .light-box h4 {
+        color: var(--text-dark-on-light);
+    }
+
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px; margin-top: 20px;
+    }
+
+    .card {
+      padding: 30px;
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      background: var(--box-hover-bg);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+    }
+    .card h3 { color: var(--primary); } 
+    
+
+    .content-box {
+      padding: 40px;
+      margin-top: 40px;
+    }
+    .content-box h3, .content-box h4 { text-align: center; margin-top: 30px; }
+    p, ul { margin-bottom: 24px; }
+    ul li { margin-bottom: 12px; }
+
+    
+    .privileges-grid {
+        display: grid; 
+        grid-template-columns: 1fr 1fr; 
+        gap: 40px; 
+        margin-top: 30px; 
+        text-align: left;
+    }
+
+ 
+    .site-footer {
+      background: var(--header-footer-bg);
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding: 60px 0;
+      text-align: center;
+      color: var(--text-muted-on-dark);
+      margin-top: 80px;
+      position: relative; z-index: 10;
+    }
+    .site-footer div[style*="font-weight: 800"] {
+        color: var(--text-light-on-dark) !important;
+    }
+    .footer-contact a { color: #fcd34d; text-decoration: none; font-weight: 700; }
+    .footer-contact a:hover { color: var(--text-light-on-dark); }
+
+
+    @media (max-width: 768px) {
+      
+      .wrap { padding: 0 12px; }
+
+     
+      .site-header { padding: 8px 0; }
+      
+ 
+      .header-inner {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px; 
+      }
+
+      .brand {
+          display: flex;
+          align-items: center;
+      }
+      .logo { 
+        width: 32px; height: 32px; 
+        margin-right: 8px;
+        border-radius: 8px;
+      }
+      .brand-name { 
+          display: block; 
+          font-size: 1.2rem;
+      }
+      
+    
+      .main-nav {
+        display: flex;
+        flex-direction: row; 
+        align-items: center;
+        justify-content: space-between; 
+        width: 100%; 
+      }
+      
+      .main-nav a {
+          font-size: 12px; 
+      }
+      
+    
+      .btn-whatsapp {
+          padding: 6px 14px;
+          font-size: 12px;
+      }
+      .wp-icon { width: 14px; height: 14px; }
+
+ 
+      h1 { font-size: 2rem; }
+      h2 { font-size: 1.7rem; margin-top: 40px; }
+      .hero { padding: 30px 0 20px; }
+      .card, .content-box { padding: 20px 15px; }
+      .privileges-grid { grid-template-columns: 1fr; gap: 25px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="fixed-bg"></div>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#">
+        <div class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M19 14c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm-14 0c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm7.36-6.1c-1.33-2.33-3.17-3.9-5.36-3.9-1.73 0-3.37.99-4.55 2.54l.95.96C4.38 6.27 5.6 5.5 7 5.5c1.64 0 3.02 1.12 4.04 2.87l.5-2.25 3.46-1.73V2l5 2v3H17V6h-2.5l-2.14 2.62zM16.5 17c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5-1.5-.67-1.5-1.5zM5 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM7.5 13H4v-2l5.5-3 4.15 1.42-1.31 1.7-2.67-1.91-.92.46z"></path></svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">İstanbul Hız Kurye</span>
+        </div>
+      </a>
+      <nav class="main-nav">
+        <a href="#services">Hizmetler</a>
+        <a href="#about">Hakkımızda</a>
+        
+        <a href="https://wa.me/905331532815?text=Merhaba,%20kurye%20çağırmak%20istiyorum.%0A%0AKurye%20türü%20(motokurye%20/%20araba%20kurye%20/%20kamyon%20/%20acil%20motokurye)%3A%0AGönderilecek%20adres%3A%0ATeslim%20alınacak%20adres%3A%0APaket%20türü%20(zarf,%20koli,%20palet%20vb.)%3A" 
+           target="_blank" 
+           class="btn-whatsapp">
+           <img src="whatsapp.png" class="wp-icon" alt="WhatsApp">
+           Bize Ulaşın
+        </a>
+
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    
+    <section class="hero">
+      <h1>Hızlı, Güvenli Ve <br>Profesyonel Teslimat</h1>
+      <br>
+      <p>İstanbul'un her noktasına dakikalar içinde ulaşan motorlu kurye ekibimizle işlerinizi hızlandırıyoruz. Zaman sizin için değerli ise çözümü bizde.</p>
+      <div class="hero-actions">
+        <a href="https://wa.me/905331532815?text=Merhaba,%20kurye%20çağırmak%20istiyorum.%0A%0AKurye%20türü%20(motokurye%20/%20araba%20kurye%20/%20kamyon%20/%20acil%20motokurye)%3A%0AGönderilecek%20adres%3A%0ATeslim%20alınacak%20adres%3A%0APaket%20türü%20(zarf,%20koli,%20palet%20vb.)%3A" 
+           target="_blank" 
+           class="btn-whatsapp">
+           <img src="whatsapp.png" class="wp-icon" alt="WhatsApp">
+           Bize Ulaşın
+        </a>
+      </div>
+    </section>
+
+    <section id="services">
+      <h2>Hizmetlerimiz</h2>
+      <div class="cards-grid">
+        <article class="card light-box">
+          <h3>🏍️ Motorlu Kurye</h3>
+          <p>Motosiklet ile yoğun trafikte bile en hızlı, güvenli ve profesyonel teslimat.</p>
+        </article>
+        <article class="card light-box">
+          <h3>⚡ Acil Kurye</h3>
+          <p>Zamanla yarışan kritik gönderileriniz için en süratli teslimat seçeneği.</p>
+        </article>
+        <article class="card light-box">
+          <h3>🚗 Arabalı Kurye</h3>
+          <p>Motosiklet ile taşınamayan hassas veya büyük paketler için araçlı çözüm.</p>
+        </article>
+        <article class="card light-box">
+          <h3>📦 Kamyonet Kurye</h3>
+          <p>Toplu veya hacimli gönderileriniz için geniş araç desteği.</p>
+        </article>
+      </div>
+
+      <div class="content-box light-box">
+        <h3>Motorlu Kurye Nedir?</h3>
+        <p>Motorlu kurye, motosiklet ile hızlı ve güvenli bir şekilde gönderilerinizi alıcıya ulaştıran profesyonel taşımacılık hizmetidir. Geleneksel kargo firmalarına göre çok daha hızlı teslimat sağlar ve özellikle acil gönderilerde tercih edilir.</p>
+
+        <h4>Hizmet Türleri ve Avantajları</h4>
+        <ul>
+          <li><strong>Motorlu Kurye:</strong> Motosiklet ile yoğun trafikte bile en hızlı, güvenli ve profesyonel teslimat.</li>
+          <li><strong>Acil Motorlu Kurye:</strong> En hızlı teslimat seçeneği olup zaman kritik gönderiler için idealdir.</li>
+          <li><strong>Kamyonet Kurye:</strong> Toplu ve hacimli gönderileriniz için daha geniş araç desteği.</li>
+          <li><strong>Arabalı Kurye:</strong> Motor ile taşınamayacak daha büyük paketler için özel araçlarla teslimat sağlar.</li>
+        </ul>
+
+        <h4>Neden Bizi Tercih Etmelisiniz?</h4>
+        <p>İstanbul’un yoğun trafiği nedeniyle motorlu kurye hizmetleri her geçen gün daha fazla tercih edilmektedir. Acil motorlu kurye, arabalı kurye, kamyonet kurye, motorlu kurye hizmetlerimiz işletmelerin süreçlerini hızlandırırken bireylerin de zaman kaybını önler.</p>
+      </div>
+    </section>
+
+    <section id="about" style="margin-top: 60px;">
+      <h2>Hakkımızda</h2>
+      
+      <div class="content-box light-box" id="about-box">
+        <p style="text-align: center; font-size: 1.1em;">Motorlu kurye hizmeti, motosiklet ile hızlı ve güvenli şekilde gönderilerinizi alıcıya ulaştıran profesyonel bir taşımacılık çözümüdür. Geleneksel kargolara göre çok daha hızlıdır ve özellikle acil ihtiyaçlarda tercih edilir.</p>
+
+        <h3>Size Sunduğumuz Ayrıcalıklar</h3>
+        
+        <div class="privileges-grid">
+          <div>
+              <h4>🚀 Hızlı Teslimat</h4>
+              <p>Trafik avantajıyla kısa sürede teslimat sağlayarak iş akışınızı hızlandırıyoruz.</p>
+          </div>
+          <div>
+              <h4>🛡️ Güvenilirlik</h4>
+              <p>Deneyimli kurye ekibi ile paketleriniz emin ellerde olmak üzere sorunsuz teslimat garantisi sağlıyoruz.</p>
+          </div>
+          <div>
+              <h4>📍 Esnek Hizmet</h4>
+              <p>İstanbul’un her bölgesine uygun ve size özel teslimat çözümleri üretiyoruz.</p>
+          </div>
+          <div>
+              <h4>🕒 7/24 Aktif</h4>
+              <p>Günün her saati acil ihtiyaçlarınıza cevap veriyor, zaman kavramını aşıyoruz.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="wrap footer-inner">
+      <div style="font-weight: 800; font-size: 1.5rem; margin-bottom: 20px;">İSTANBUL HIZ KURYE</div>
+      
+      <div class="footer-contact" style="margin-bottom: 30px; font-size: 1.1em;">
+        <div style="margin-bottom: 10px;">
+            📞 <a href="tel:+905331532815">+905331532815</a>
+        </div>
+        <div>
+            ✉️ <a href="mailto:istanbulhizkurye@gmail.com">istanbulhizkurye@gmail.com</a>
+        </div>
+      </div>
+      
+      <div>© <span id="year"></span> İstanbul Hız Kurye — Tüm hakları saklıdır.</div>
+      <div style="font-size: 0.9em; margin-top: 10px; opacity: 0.7;">Profesyonel Taşımacılık Hizmetleri</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
