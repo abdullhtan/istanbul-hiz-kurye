@@ -1,1 +1,1 @@
-internet sitesi: https:https://istanbulhizkurye.com
+internet sitesi:  https://istanbulhizkurye.com
