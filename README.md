@@ -1,1 +1,1 @@
-internet sitesi:  https://istanbulhizkurye.com
+internet sitesi:  https://xn--istanbulhzkurye-glc.com/
